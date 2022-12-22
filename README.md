@@ -16,6 +16,15 @@ Steps:
 5. Run the script: `bash setup.sh`. This will take 5-10 minutes.
 6. The server should spin up with a public Gradio link that can be used to access the WebUI
 
+### Backlog
+There are _many_ ways to improve this, including:
+- Encapsulate the setup script into a Cloudformation template
+- Set up a proper reverse proxy so the app can be accessed without the public Gradio link (which expires after 72 hours)
+- Set up a startup script for the EC2 instance so the app start every time the instance is spun up (allows for stopping the instance when not used)
+- Adding a script that allows automaically adding more models
+- Amend startup script to include upscaling models and textual inversions
+- Big one: Run the inference in a SageMaker endpoint instead of the EC2 instance
+
 
 ## Features
 [Detailed feature showcase with images](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features):
