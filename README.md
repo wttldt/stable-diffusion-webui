@@ -5,6 +5,18 @@ A browser interface based on Gradio library for Stable Diffusion.
 
 Check the [custom scripts](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Custom-Scripts) wiki page for extra scripts developed by users.
 
+## AWS EC2 Version
+This repo contains a [setup script](https://github.com/marshmellow77/stable-diffusion-webui/blob/master/setup.sh) that can be run on an EC2 instance as a one-click deployment.
+
+Steps:
+1. Create EC2 instance with Ubuntu 22.04, g4dn.xlarge, and 100GB EBS
+2. Once the EC2 is spun up, log in as user `ubuntu`
+3. Run `git clone https://github.com/marshmellow77/stable-diffusion-webui/blob/master/setup.sh`
+4. Copy the setup script to the home directory: `cp stable-diffusion-webui/setup.sh .`
+5. Run the script: `bash setup.sh`. This will take 5-10 minutes.
+6. The server should spin up with a public Gradio link that can be used to access the WebUI
+
+
 ## Features
 [Detailed feature showcase with images](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features):
 - Original txt2img and img2img modes
