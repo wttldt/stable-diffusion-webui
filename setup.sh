@@ -23,5 +23,5 @@ cp v2-inference.yaml stable-diffusion-webui/models/Stable-diffusion/v2-1_512-ema
 sudo chown -R ubuntu:ubuntu stable-diffusion-webui/
 cd stable-diffusion-webui/
 
-bash webui-setup.sh
+bash webui.sh --share
 
