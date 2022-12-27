@@ -1,9 +1,7 @@
-# Stable Diffusion web UI
+# Stable Diffusion Web UI on EC2
 A browser interface based on Gradio library for Stable Diffusion.
 
 ![](txt2img_Screenshot.png)
-
-Check the [custom scripts](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Custom-Scripts) wiki page for extra scripts developed by users.
 
 ## AWS EC2 Version
 This is a fork of https://github.com/AUTOMATIC1111/stable-diffusion-webui/ based on the main version on 21 Dec 2022.
@@ -11,19 +9,26 @@ This is a fork of https://github.com/AUTOMATIC1111/stable-diffusion-webui/ based
 This repo contains a [setup script](https://github.com/marshmellow77/stable-diffusion-webui/blob/master/setup.sh) that can be run on an EC2 instance as a one-click deployment.
 
 Steps:
-1. Create EC2 instance with Ubuntu 22.04, g4dn.xlarge, and 100GB EBS
-2. Once the EC2 is spun up, log in as user `ubuntu`
-3. Run `git clone https://github.com/marshmellow77/stable-diffusion-webui/blob/master/setup.sh`
-4. Copy the setup script to the home directory: `cp stable-diffusion-webui/setup.sh .`
-5. Run the script: `bash setup.sh`. This will take 5-10 minutes.
-6. The server should spin up with a public Gradio link that can be used to access the WebUI
+1. Clone this repo via 
+```
+git clone https://github.com/marshmellow77/stable-diffusion-webui.git
+```
+2. Run the CloudFormation Template via
+```
+aws cloudformation create-stack --stack-name sd-webui-stack --template-body file://stable-diffusion-webui/sd-web-ui.yaml
+```
+3. Get a coffee - it will take 15-20 minutes until the app is deployed
+4. Retrieve the IP address of the EC2 instance via
+```
+aws cloudformation list-stack-resources --stack-name sd-webui-stack --query 'StackResourceSummaries[?ResourceType==`AWS::EC2::EIP`].PhysicalResourceId' --output text
+```
+5. Open your web browser and navigate to <IP_ADDRESS>:7860
+6. If the app is not working, connect to the EC2 instance and run `netstat -tulpn` to see if the app is running on port 7860
 
 ### Backlog
-There are _many_ ways to improve this, including:
-- Encapsulate the setup script into a Cloudformation template
-- Set up a proper reverse proxy so the app can be accessed without the public Gradio link (which expires after 72 hours)
+There are _many_ ways to improve this repo, including:
 - Set up a startup script for the EC2 instance so the app start every time the instance is spun up (allows for stopping the instance when not used)
-- Adding a script that allows automaically adding more models
+- Adding a script that allows adding more models
 - Amend startup script to include upscaling models and textual inversions
 - Big one: Run the inference in a SageMaker endpoint instead of the EC2 instance
 

@@ -1,6 +1,6 @@
 sudo sed -i "/#\$nrconf{restart} = 'i';/s/.*/\$nrconf{restart} = 'a';/" /etc/needrestart/needrestart.conf
 sudo apt-get update
-sudo apt install wget git python3 python3-venv build-essential -y
+sudo apt install wget git python3 python3-venv build-essential net-tools -y
 
 # install CUDA (from https://developer.nvidia.com/cuda-downloads)
 wget https://developer.download.nvidia.com/compute/cuda/12.0.0/local_installers/cuda_12.0.0_525.60.13_linux.run
@@ -23,5 +23,5 @@ cp v2-inference.yaml stable-diffusion-webui/models/Stable-diffusion/v2-1_512-ema
 sudo chown -R ubuntu:ubuntu stable-diffusion-webui/
 cd stable-diffusion-webui/
 
-bash webui.sh --listen
+sudo -u ubuntu nohup bash webui.sh --listen > log.txt
 
