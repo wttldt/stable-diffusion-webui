@@ -16,6 +16,8 @@ git lfs install --skip-smudge
 git clone --depth 1 https://huggingface.co/stabilityai/stable-diffusion-2-1-base
 cd stable-diffusion-2-1-base/
 git lfs pull --include "v2-1_512-ema-pruned.ckpt"
+git lfs install --force
+
 cd ..
 mv stable-diffusion-2-1-base/v2-1_512-ema-pruned.ckpt stable-diffusion-webui/models/Stable-diffusion/
 wget https://raw.githubusercontent.com/Stability-AI/stablediffusion/main/configs/stable-diffusion/v2-inference.yaml
