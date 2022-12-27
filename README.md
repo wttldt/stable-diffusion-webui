@@ -24,6 +24,10 @@ aws cloudformation list-stack-resources --stack-name sd-webui-stack --query 'Sta
 ```
 5. Open your web browser and navigate to <IP_ADDRESS>:7860
 6. If the app is not working, connect to the EC2 instance and run `netstat -tulpn` to see if the app is running on port 7860
+7. If you want to delete everything, run
+```
+aws cloudformation delete-stack --stack-name sd-webui-stack
+```
 
 ### Backlog
 There are _many_ ways to improve this repo, including:
