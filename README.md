@@ -17,7 +17,7 @@ git clone https://github.com/marshmellow77/stable-diffusion-webui.git
 ```
 aws cloudformation create-stack --stack-name sd-webui-stack --template-body file://stable-diffusion-webui/sd-web-ui.yaml
 ```
-3. Get a coffee - it will take 15-20 minutes until the app is deployed
+3. Get a coffee ☕️ It will take 15-20 minutes until the app is deployed
 4. Retrieve the IP address of the EC2 instance via
 ```
 aws cloudformation list-stack-resources --stack-name sd-webui-stack --query 'StackResourceSummaries[?ResourceType==`AWS::EC2::EIP`].PhysicalResourceId' --output text
@@ -29,7 +29,7 @@ aws cloudformation list-stack-resources --stack-name sd-webui-stack --query 'Sta
 aws cloudformation delete-stack --stack-name sd-webui-stack
 ```
 
-### Backlog
+### Todo Backlog
 There are _many_ ways to improve this repo, including:
 - Set up a startup script for the EC2 instance so the app start every time the instance is spun up (allows for stopping the instance when not used)
 - Adding a script that allows adding more models
