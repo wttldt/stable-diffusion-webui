@@ -1,5 +1,5 @@
 AWSTemplateFormatVersion: '2010-09-09'
-Description: A simple CloudFormation template for creating a security group and launching an EC2 instance
+Description: A CloudFormation template to deploy the Stable Diffusion Web UI by Automatic1111
 
 Resources:
   SecurityGroup:
