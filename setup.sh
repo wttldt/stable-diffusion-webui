@@ -21,7 +21,7 @@ mv stable-diffusion-2-1-base/v2-1_512-ema-pruned.ckpt stable-diffusion-webui/mod
 wget https://raw.githubusercontent.com/Stability-AI/stablediffusion/main/configs/stable-diffusion/v2-inference.yaml
 cp v2-inference.yaml stable-diffusion-webui/models/Stable-diffusion/v2-1_512-ema-pruned.yaml
 sudo chown -R ubuntu:ubuntu stable-diffusion-webui/
-cd stable-diffusion-webui/
+# cd stable-diffusion-webui/
 
-sudo -u ubuntu nohup bash webui.sh --listen > log.txt
+sudo -u ubuntu nohup bash stable-diffusion-webui/webui.sh --listen > log.txt
 
