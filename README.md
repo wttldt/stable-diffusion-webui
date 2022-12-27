@@ -6,6 +6,8 @@ A browser interface based on Gradio library for Stable Diffusion.
 Check the [custom scripts](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Custom-Scripts) wiki page for extra scripts developed by users.
 
 ## AWS EC2 Version
+This is a fork of https://github.com/AUTOMATIC1111/stable-diffusion-webui/ based on the main version on 21 Dec 2022.
+
 This repo contains a [setup script](https://github.com/marshmellow77/stable-diffusion-webui/blob/master/setup.sh) that can be run on an EC2 instance as a one-click deployment.
 
 Steps:
