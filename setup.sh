@@ -11,12 +11,12 @@ sudo sh cuda_12.0.0_525.60.13_linux.run --silent
 # install git-lfs
 curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
 sudo apt-get install git-lfs
-git lfs install --skip-smudge
+sudo -u ubuntu git lfs install --skip-smudge
 
-git clone --depth 1 https://huggingface.co/stabilityai/stable-diffusion-2-1-base
+sudo -u ubuntu git clone --depth 1 https://huggingface.co/stabilityai/stable-diffusion-2-1-base
 cd stable-diffusion-2-1-base/
-git lfs pull --include "v2-1_512-ema-pruned.ckpt"
-git lfs install --force
+sudo -u ubuntu git lfs pull --include "v2-1_512-ema-pruned.ckpt"
+sudo -u ubuntu git lfs install --force
 
 cd ..
 mv stable-diffusion-2-1-base/v2-1_512-ema-pruned.ckpt stable-diffusion-webui/models/Stable-diffusion/
