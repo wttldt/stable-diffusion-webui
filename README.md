@@ -15,7 +15,7 @@ git clone https://github.com/marshmellow77/stable-diffusion-webui.git
 ```
 2. Run the CloudFormation Template via
 ```
-aws cloudformation create-stack --stack-name sd-webui-stack --template-body file://stable-diffusion-webui/sd-web-ui.yaml
+aws cloudformation create-stack --stack-name sd-webui-stack --template-body file://stable-diffusion-webui/sd-web-ui-cf-template.yaml
 ```
 3. Get a coffee ☕️ It will take 15-20 minutes until the app is deployed
 4. Retrieve the IP address of the EC2 instance via
