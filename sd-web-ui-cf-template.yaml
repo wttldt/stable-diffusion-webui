@@ -6,7 +6,7 @@ Resources:
     Type: AWS::EC2::SecurityGroup
     Properties:
       GroupName: sd-webui-sg
-      GroupDescription: Security group for whisper-demo EC2 instance
+      GroupDescription: Security group for SD WebUI EC2 instance
       SecurityGroupIngress:
         - IpProtocol: tcp
           FromPort: 22
