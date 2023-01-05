@@ -19,6 +19,7 @@ sudo -u ubuntu git lfs pull --include "v2-1_512-ema-pruned.ckpt"
 sudo -u ubuntu git lfs install --force
 cd ..
 mv stable-diffusion-2-1-base/v2-1_512-ema-pruned.ckpt stable-diffusion-webui/models/Stable-diffusion/
+rm -rf stable-diffusion-2-1-base/
 
 # download the corresponding config file and move it also to the model directory (make sure the name matches the model name)
 wget https://raw.githubusercontent.com/Stability-AI/stablediffusion/main/configs/stable-diffusion/v2-inference.yaml
