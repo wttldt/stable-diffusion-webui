@@ -32,4 +32,4 @@ sudo chown -R ubuntu:ubuntu stable-diffusion-webui/
 sudo -u ubuntu nohup bash stable-diffusion-webui/webui.sh --listen > log.txt
 
 # enable api
-sudo -u ubuntu nohup bash stable-diffusion-webui/webui.sh --listen --api-enabled > log.txt
+sudo -u ubuntu nohup bash stable-diffusion-webui/webui-user.sh/ --listen > log.txt
