@@ -29,7 +29,7 @@ cp v2-inference.yaml stable-diffusion-webui/models/Stable-diffusion/v2-1_512-ema
 sudo chown -R ubuntu:ubuntu stable-diffusion-webui/
 
 # access the stable-diffusion-webui repository and run the webui-user.sh script
-sudo -u ubuntu git clone https://github.com/Stability-AI/stable-diffusion-webui.git
+sudo -u ubuntu git clone https://github.com/wttldt/stable-diffusion-webui.git
 sudo -u ubuntu bash stable-diffusion-webui/webui-user.sh
 
 # start the server as user 'ubuntu'
