@@ -30,9 +30,10 @@ sudo chown -R ubuntu:ubuntu stable-diffusion-webui/
 
 # access the stable-diffusion-webui repository and run the webui-user.sh script
 sudo -u ubuntu git clone https://github.com/wttldt/stable-diffusion-webui.git
-sudo -u ubuntu bash stable-diffusion-webui/webui-user.sh
+sudo -u ubuntu bash stable-diffusion-webui/webui-user.sh --listen > logwebuiuser.txt
+sudo -u ubuntu bash stable-diffusion-webui/sd-per-boot.sh --listen > logperboot.txt
 
 # start the server as user 'ubuntu'
-sudo -u ubuntu nohup bash stable-diffusion-webui/webui.sh --listen > log.txt
+sudo -u ubuntu nohup bash stable-diffusion-webui/webui.sh --listen > logwebui.txt
 
 
